@@ -1,6 +1,6 @@
 import gzip
 
-f = gzip.open('C:\Users\heanu\Desktop\Minst/train-images-idx3-ubyte.gz', 'rb')
+f=gzip.open('C:\Users\heanu\Desktop\Minst/train-images-idx3-ubyte.gz', 'rb')
 
 # firstbyte = f.read(1)
 # print(firstbyte)
