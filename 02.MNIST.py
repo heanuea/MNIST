@@ -33,19 +33,18 @@ def read_images_from_file(filename):
         norow = int.from_bytes(norow, 'big') 
         print("Number of labels: ", norow) 
 
-images = [] # Image array.
-       
+        images = [] # Image the [] represents an array 
+        # Loop through all images
         for i in range(noimg):
             row = []
             for r in range(norow):
                 cols = []
                 for c in range(nocol):
                     cols.append(int.from_bytes(f.read(1), 'big'))
-
                 row.append(cols)
-
             images.append(row)
-        return images
+
+        return images 
 
 # Function to print out an image to the console
 def print_out_image(image_array):
