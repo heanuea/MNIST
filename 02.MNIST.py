@@ -33,3 +33,27 @@ def read_images_from_file(filename):
         norow = int.from_bytes(norow, 'big') 
         print("Number of labels: ", norow) 
 
+images = [] # Image array.
+       
+        for i in range(noimg):
+            row = []
+            for r in range(norow):
+                cols = []
+                for c in range(nocol):
+                    cols.append(int.from_bytes(f.read(1), 'big'))
+
+                row.append(cols)
+
+            images.append(row)
+        return images
+
+# Function to print out an image to the console
+def print_out_image(image_array):
+    for row in image_array:
+        for col in row:
+            print("." if col <= 127 else "#", end="")
+        print()
+
+
+train_images = read_images_from_file("data/train-images-idx3-ubyte.gz")
+print_out_image(train_images[2])
